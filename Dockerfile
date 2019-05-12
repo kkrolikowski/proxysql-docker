@@ -5,7 +5,7 @@ RUN yum install -y https://github.com/sysown/proxysql/releases/download/v1.2.1/p
 
 RUN rpmkeys --import https://www.percona.com/downloads/RPM-GPG-KEY-percona
 RUN yum install -y http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
-RUN yum install -y Percona-Server-client-56
+RUN yum install --nogpgcheck -y Percona-Server-client-56
 
 ADD proxysql.cnf /etc/proxysql.cnf
 
